@@ -1,0 +1,14 @@
+{
+  "Income Certificate": {
+    "official_fee": 0,
+    "documents": ["Aadhaar", "Income Proof"],
+    "time": "10–20 days",
+    "official_site": "https://services.india.gov.in"
+  },
+  "PAN Card": {
+    "official_fee": 107,
+    "documents": ["Aadhaar", "Photo", "Signature"],
+    "time": "7–15 days",
+    "official_site": "https://www.onlineservices.nsdl.com"
+  }
+}
