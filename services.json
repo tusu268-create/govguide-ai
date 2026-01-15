@@ -1,12 +1,13 @@
 {
-  "GEMINI_API_KEY":"AIzaSyBKRlO9GxqYPJxg7al4yUwZQ98t2ZgKxiU",
-{
+  "GEMINI_API_KEY": "AIzaSyBKRlO9GxqYPJxg7al4yUwZQ98t2ZgKxiU",
+
   "PAN Card": {
     "documents": ["Aadhaar Card", "Photo"],
     "cost": "Free",
     "time": "7–15 days",
     "official_link": "https://www.incometax.gov.in"
   },
+
   "Aadhaar Update": {
     "documents": ["Aadhaar", "Address Proof"],
     "cost": "₹50",
