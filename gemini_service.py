@@ -11,6 +11,6 @@ with open(json_path, "r") as f:
 genai.configure(api_key=services["GEMINI_API_KEY"])
 
 def get_gemini_response(prompt):
-    model = genai.GenerativeModel("gemini-pro")
+    model = genai.GenerativeModel("models/gemini-1.5-flash")
     response = model.generate_content(prompt)
     return response.text
