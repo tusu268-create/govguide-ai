@@ -1,21 +1,14 @@
 {
   "PAN Card": {
-    "documents": ["Aadhaar Card", "Photo"],
-    "cost": "110",
-    "time": "7–15 days",
-    "official_link": "https://www.incometax.gov.in"
+    "documents": ["Aadhaar Card", "Passport size photo"],
+    "official_link": "https://www.incometax.gov.in",
+    "official_cost": 110,
     "steps": [
       "Visit the official website",
       "Fill PAN application form",
       "Upload documents",
       "Pay official fee",
-      "Track application status"]
-  }
-
-  "Aadhaar Update": {
-    "documents": ["Aadhaar", "Address Proof"],
-    "cost": "₹50",
-    "time": "5–10 days",
-    "official_link": "https://uidai.gov.in"
+      "Track application status"
+    ]
   }
 }
