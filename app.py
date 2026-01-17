@@ -1,3 +1,9 @@
+st.image("logo.png", width=120)
+
+st.markdown(
+    "<h2 style='color:#0B3C5D;'>GovGuide AI</h2>",
+    unsafe_allow_html=True
+)
 import streamlit as st
 import json
 import os
