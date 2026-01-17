@@ -2,10 +2,7 @@ import streamlit as st
 import json
 import os
 from gemini_service import get_gemini_response
-st.markdown(
-    "<h1 style='color:#8B6F47;'>GovGuide AI</h1>",
-    unsafe_allow_html=True
-)
+
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 
 with open(os.path.join(BASE_DIR, "services.json"), "r") as f:
