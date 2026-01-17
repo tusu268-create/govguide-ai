@@ -11,6 +11,6 @@ with open(os.path.join(BASE_DIR, "config.json"), "r") as f:
 genai.configure(api_key=config["GEMINI_API_KEY"])
 
 def get_gemini_response(prompt):
-    model = genai.GenerativeModel("gemini-1.0-pro")
+    model = genai.GenerativeModel("gemini-1.5-flash")
     response = model.generate_content(prompt)
     return response.text
