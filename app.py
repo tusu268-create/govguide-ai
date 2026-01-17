@@ -8,7 +8,7 @@ BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 with open(os.path.join(BASE_DIR, "services.json"), "r") as f:
     services = json.load(f)
 
-st.title("GovGuide AI")
+st.title("🏛️GovGuide AI")
 st.write("Ask anything about Indian Government services")
 
 user_input = st.text_input("Enter document name (e.g. PAN Card)")
