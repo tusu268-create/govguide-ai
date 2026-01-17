@@ -2,10 +2,8 @@ import streamlit as st
 import json
 import os
 from gemini_service import get_gemini_response
-st.image("logo.png", width=120)
-
 st.markdown(
-    "<h2 style='color:#8B6F47;'>GovGuide AI</h2>",
+    "<h1 style='color:#8B6F47;'>GovGuide AI</h1>",
     unsafe_allow_html=True
 )
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
