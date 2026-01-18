@@ -66,51 +66,11 @@ st.markdown("""
     font-size: 12px;
     margin-top: 40px;
 }
-<style>
-.running-bar {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    background: #fff3cd;
-    border-bottom: 2px solid #ffc107;
-    z-index: 9999;
-    overflow: hidden;
-}
-
-.running-text {
-    display: inline-block;
-    white-space: nowrap;
-    padding-left: 100%;
-    animation: moveText 25s linear infinite;
-    font-size: 14px;
-    font-weight: 600;
-    color: #856404;
-}
-
-@keyframes moveText {
-    0% {
-        transform: translateX(0);
-    }
-    100% {
-        transform: translateX(-100%);
-    }
-}
-</style>
 </style>
 """, unsafe_allow_html=True)
 
 # ---------------- HERO SECTION ----------------
 st.image("logo.png.jpeg", width=85)
-st.markdown("""
-<div class="marquee-container">
-    <div class="marquee-text">
-        ⚠️ Be aware of fraud and agents. Always use official Government websites only.
-        For complaints visit: https://pgportal.gov.in  |  
-        GovGuide AI is for guidance only and does not charge any fee.
-    </div>
-</div>
-""", unsafe_allow_html=True)
 st.markdown("<div class='hero-title'>🏛️GovGuide AI</div>", unsafe_allow_html=True)
 st.markdown(
     "<div class='hero-sub'>Your trusted AI guide for Indian Government services.<br>"
