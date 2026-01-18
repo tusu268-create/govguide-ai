@@ -17,18 +17,7 @@ if user_input:
     service = services.get(user_input)
 
     if service:
-        st.markdown(
-        """
-        <div style="
-            border: 2px solid #E0D6C5;
-            border-radius: 10px;
-            padding: 20px;
-            background-color: #F5F1E8;
-            margin-top: 20px;
-        ">
-        """,
-        unsafe_allow_html=True
-    )
+        
         st.subheader("Required Documents")
         for doc in service["documents"]:
             st.write(f"- {doc}")
