@@ -125,7 +125,7 @@ st.markdown("""
 <div class="header">
 
     <div class="logo">
-        <img src="logo.png">
+        <img src="logo.png.jpeg">
     </div>
 
     <div class="center-text">
