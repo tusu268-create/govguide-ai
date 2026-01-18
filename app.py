@@ -5,134 +5,197 @@ from gemini_service import get_gemini_response
 
 # ---------------- PAGE CONFIG ----------------
 st.set_page_config(
-    page_title="🏛️GovGuide AI",
+    page_title="GovGuide AI",
     page_icon="🏛️",
     layout="centered"
 )
 
 # ---------------- LOAD DATA ----------------
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
-
 with open(os.path.join(BASE_DIR, "services.json"), "r") as f:
     services = json.load(f)
 
-# ---------------- CUSTOM CSS ----------------
+# ---------------- CSS ----------------
 st.markdown("""
 <style>
-.main {
-    background-color: #f4f6f8;
-}
+
+/* REMOVE DEFAULT TOP GAP */
 .block-container {
-    border: 2px solid #0b5ed7;
-    border-radius: 18px;
-    padding: 2rem;
-    background-color: white;
-    box-shadow: 0 14px 35px rgba(0,0,0,0.15);
+    padding-top: 0rem;
 }
-.hero-title {
+
+/* HEADER */
+.header {
+    background-color: #0A2A66;
+    padding: 20px 25px 30px;
+    border-radius: 0 0 20px 20px;
+    position: relative;
+}
+
+/* LOGO LEFT */
+.logo {
+    position: absolute;
+    left: 25px;
+    top: 20px;
+}
+
+.logo img {
+    width: 55px;
+}
+
+/* CENTER CONTENT */
+.center-text {
     text-align: center;
-    font-size: 34px;
+    color: white;
+}
+
+/* SATYAMEV */
+.satyamev {
+    font-weight: 700;
+    letter-spacing: 3px;
+    margin-bottom: 6px;
+}
+
+/* APP NAME */
+.app-name {
+    font-size: 30px;
     font-weight: 800;
-    color: #0b5ed7;
+    margin: 0;
 }
-.hero-sub {
-    text-align: center;
-    color: #555;
-    margin-bottom: 10px;
+
+/* SUBTEXT */
+.subtext {
+    font-size: 14px;
+    opacity: 0.95;
 }
+
+/* TAGLINE */
 .tagline {
-    text-align: center;
-    font-size: 16px;
     font-weight: 600;
-    color: #198754;
-    margin-bottom: 30px;
+    margin-top: 6px;
 }
+
+/* TIRANGA LINE */
+.tiranga {
+    margin: 12px auto 0;
+    width: 120px;
+    height: 4px;
+    background: linear-gradient(
+        to right,
+        #FF9933 0%,
+        #FF9933 33%,
+        white 33%,
+        white 66%,
+        #138808 66%,
+        #138808 100%
+    );
+    border-radius: 5px;
+}
+
+/* WHITE CONTENT */
+.content {
+    background: white;
+    padding: 25px;
+    border-radius: 20px;
+    margin-top: -10px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+}
+
+/* CARDS */
 .card {
-    padding: 20px;
     background: #f8f9fa;
-    border-left: 6px solid #198754;
+    padding: 18px;
+    border-left: 5px solid #0A2A66;
     border-radius: 12px;
     margin-top: 15px;
 }
-.warning {
-    padding: 15px;
-    background: #fff3cd;
-    border-left: 6px solid #ffc107;
-    border-radius: 10px;
-}
+
 .footer {
     text-align: center;
-    color: gray;
     font-size: 12px;
-    margin-top: 40px;
+    color: gray;
+    margin-top: 30px;
 }
+
 </style>
 """, unsafe_allow_html=True)
 
-# ---------------- HERO SECTION ----------------
-st.image("logo.png.jpeg", width=75)
-st.markdown("<div class='hero-title'>🏛️GovGuide AI</div>", unsafe_allow_html=True)
-st.markdown(
-    "<div class='hero-sub'>Your trusted AI guide for Indian Government services.<br>"
-    "No confusion. No fraud. No middlemen.</div>",
-    unsafe_allow_html=True
-)
-st.markdown(
-    "<div class='tagline'>🇮🇳 Towards a Corruption-Free, Informed India</div>",
-    unsafe_allow_html=True
-)
+# ---------------- HEADER ----------------
+st.markdown("""
+<div class="header">
 
-# ---------------- SEARCH INPUT ----------------
+    <div class="logo">
+        <img src="logo.png.jpeg">
+    </div>
+
+    <div class="center-text">
+        <div class="satyamev">सत्यमेव जयते</div>
+        <div class="app-name">🏛️GovGuide AI</div>
+        <div class="subtext">Your trusted guide for Government Services</div>
+        <div class="tagline">Towards a Corruption-Free, Informed India 🇮🇳</div>
+        <div class="tiranga"></div>
+    </div>
+
+</div>
+""", unsafe_allow_html=True)
+
+# ---------------- CONTENT ----------------
+st.markdown("<div class='content'>", unsafe_allow_html=True)
+
 user_input = st.text_input(
-    "🔍 Search Government Service or Document",
-    placeholder="Example: PAN Card, Aadhaar, Passport"
+    "🔍 Search Government Service",
+    placeholder="PAN Card, Aadhaar, Passport"
 )
 
-# ---------------- NORMALIZE INPUT ----------------
 def normalize(text):
     return text.lower().strip()
 
 normalized_services = {normalize(k): v for k, v in services.items()}
 
-# ---------------- MAIN LOGIC ----------------
 if user_input:
     service = normalized_services.get(normalize(user_input))
 
     if service:
-        st.markdown("<div class='card'><h3>📄 Required Documents</h3></div>", unsafe_allow_html=True)
+        st.markdown("<div class='card'><b>📄 Required Documents</b></div>", unsafe_allow_html=True)
         for doc in service["documents"]:
             st.write(f"• {doc}")
 
-        st.markdown("<div class='card'><h3>🌐 Official Government Website</h3></div>", unsafe_allow_html=True)
+        st.markdown("<div class='card'><b>🌐 Official Website</b></div>", unsafe_allow_html=True)
         st.write(service["official_link"])
 
-        st.markdown("<div class='card'><h3>🧭 How do you want to apply?</h3></div>", unsafe_allow_html=True)
-        choice = st.radio("", ["Self (Recommended)", "Using Agent"])
+        choice = st.radio(
+            "How do you want to apply?",
+            ["Self (Recommended)", "Using Agent"]
+        )
 
         if choice == "Self (Recommended)":
-            st.markdown("<div class='card'><h3>📝 Step-by-Step Process</h3></div>", unsafe_allow_html=True)
+            st.markdown("<div class='card'><b>📝 Steps to Apply</b></div>", unsafe_allow_html=True)
             for step in service["steps"]:
                 st.write(f"• {step}")
-
         else:
-            st.markdown(
-                "<div class='warning'><b>⚠️ Anti-Fraud Check</b><br>"
-                "This feature protects citizens from overcharging agents.</div>",
-                unsafe_allow_html=True
-            )
-
-            charge = st.number_input("Enter agent charge (₹)", min_value=0)
+            charge = st.number_input("Agent charge (₹)", min_value=0)
             if charge <= service["official_cost"] * 2:
                 st.success("✅ Charge looks reasonable")
             else:
-                st.error("❌ Possible fraud detected: Overcharging")
+                st.error("❌ Possible overcharging detected")
 
-        # ---------------- AI EXPLAINER ----------------
-       
+        if st.button("🤖 Explain in simple language"):
+            with st.spinner("AI is explaining..."):
+                explanation = get_gemini_response(
+                    f"Explain {user_input} government service in very simple language for a common Indian citizen."
+                )
+            st.markdown("<div class='card'><b>🧠 AI Explanation</b></div>", unsafe_allow_html=True)
+            st.write(explanation)
+
+    else:
+        st.info("Service not found.")
+
+st.markdown("</div>", unsafe_allow_html=True)
+
 # ---------------- FOOTER ----------------
 st.markdown("""
-<div class='footer'>
-⚠️ Disclaimer: GovGuide AI provides informational guidance only.  
-We are not affiliated with any government authority.
+<div class="footer">
+GovGuide AI is for guidance only.  
+We are not affiliated with any Government authority.
 </div>
 """, unsafe_allow_html=True)
