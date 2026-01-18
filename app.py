@@ -70,7 +70,7 @@ st.markdown("""
 """, unsafe_allow_html=True)
 
 # ---------------- HERO SECTION ----------------
-st.image("logo.png.jpeg", width=50)
+st.image("logo.png.jpeg", width=75)
 st.markdown("<div class='hero-title'>🏛️GovGuide AI</div>", unsafe_allow_html=True)
 st.markdown(
     "<div class='hero-sub'>Your trusted AI guide for Indian Government services.<br>"
