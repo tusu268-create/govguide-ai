@@ -71,6 +71,15 @@ st.markdown("""
 
 # ---------------- HERO SECTION ----------------
 st.image("logo.png.jpeg", width=85)
+st.markdown("""
+<div class="marquee-container">
+    <div class="marquee-text">
+        ⚠️ Be aware of fraud and agents. Always use official Government websites only.
+        For complaints visit: https://pgportal.gov.in  |  
+        GovGuide AI is for guidance only and does not charge any fee.
+    </div>
+</div>
+""", unsafe_allow_html=True)
 st.markdown("<div class='hero-title'>🏛️GovGuide AI</div>", unsafe_allow_html=True)
 st.markdown(
     "<div class='hero-sub'>Your trusted AI guide for Indian Government services.<br>"
