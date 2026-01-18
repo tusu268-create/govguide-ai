@@ -66,6 +66,31 @@ st.markdown("""
     font-size: 12px;
     margin-top: 40px;
 }
+.marquee-wrapper {
+    width: 100%;
+    overflow: hidden;
+    background: #fff3cd;
+    border-bottom: 2px solid #ffc107;
+}
+
+.marquee {
+    display: inline-block;
+    padding-left: 100%;
+    white-space: nowrap;
+    animation: scroll-left 20s linear infinite;
+    font-size: 14px;
+    font-weight: 600;
+    color: #856404;
+}
+
+@keyframes scroll-left {
+    0% {
+        transform: translateX(0%);
+    }
+    100% {
+        transform: translateX(-100%);
+    }
+}
 </style>
 """, unsafe_allow_html=True)
 
