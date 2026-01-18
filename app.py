@@ -3,9 +3,6 @@ import json
 import os
 from gemini_service import get_gemini_response
 st.image("logo.png.jpeg", width=150)
-
-    unsafe_allow_html=True
-)
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 
 with open(os.path.join(BASE_DIR, "services.json"), "r") as f:
