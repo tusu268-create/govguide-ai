@@ -132,7 +132,7 @@ st.markdown("<div class='content'>", unsafe_allow_html=True)
 
 user_input = st.text_input(
     "🔍 Search Government Service",
-    placeholder="PAN Card, Aadhaar, Passport"
+    placeholder="PAN Card, Aadhaar"
 )
 
 def normalize(text):
