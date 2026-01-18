@@ -128,16 +128,7 @@ if user_input:
                 st.error("❌ Possible fraud detected: Overcharging")
 
         # ---------------- AI EXPLAINER ----------------
-        if st.button("🤖 Explain this service in simple language"):
-            with st.spinner("AI is explaining..."):
-                explanation = get_gemini_response(
-                    f"Explain {user_input} government service in very simple language for a common Indian citizen."
-                )
-            st.info(explanation)
-
-    else:
-        st.info("ℹ️ Service not found. Try another government service.")
-
+       
 # ---------------- FOOTER ----------------
 st.markdown("""
 <div class='footer'>
