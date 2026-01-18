@@ -51,7 +51,7 @@ st.markdown("""
 """, unsafe_allow_html=True)
 
 # ---------------- LOGO + TITLE ----------------
-st.image("logo.png", width=80)
+st.image("logo.png.jpeg", width=80)
 st.markdown("<div class='title-text'>GovGuide AI</div>", unsafe_allow_html=True)
 st.markdown(
     "<div class='subtitle-text'>Ask anything about Indian Government services</div>",
