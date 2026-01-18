@@ -5,7 +5,7 @@ from gemini_service import get_gemini_response
 
 # ---------------- PAGE CONFIG ----------------
 st.set_page_config(
-    page_title="GovGuide AI",
+    page_title="🏛️GovGuide AI",
     page_icon="🏛️",
     layout="centered"
 )
