@@ -133,8 +133,7 @@ if user_input:
                 explanation = get_gemini_response(
                     f"Explain {user_input} government service in very simple language for a common Indian citizen."
                 )
-            st.markdown("<div class='card'><h3>🧠 AI Explanation</h3></div>", unsafe_allow_html=True)
-            st.write(explanation)
+            st.info(explanation)
 
     else:
         st.info("ℹ️ Service not found. Try another government service.")
