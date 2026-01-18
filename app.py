@@ -66,31 +66,37 @@ st.markdown("""
     font-size: 12px;
     margin-top: 40px;
 }
-.marquee-wrapper {
+<style>
+.running-bar {
+    position: fixed;
+    top: 0;
+    left: 0;
     width: 100%;
-    overflow: hidden;
     background: #fff3cd;
     border-bottom: 2px solid #ffc107;
+    z-index: 9999;
+    overflow: hidden;
 }
 
-.marquee {
+.running-text {
     display: inline-block;
-    padding-left: 100%;
     white-space: nowrap;
-    animation: scroll-left 20s linear infinite;
+    padding-left: 100%;
+    animation: moveText 25s linear infinite;
     font-size: 14px;
     font-weight: 600;
     color: #856404;
 }
 
-@keyframes scroll-left {
+@keyframes moveText {
     0% {
-        transform: translateX(0%);
+        transform: translateX(0);
     }
     100% {
         transform: translateX(-100%);
     }
 }
+</style>
 </style>
 """, unsafe_allow_html=True)
 
