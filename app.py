@@ -112,7 +112,7 @@ st.markdown("""
 # ---------------- LOGO ROW ----------------
 col1, col2, col3 = st.columns([1,3,1])
 with col1:
-    st.image("logo.png.jpeg", width=90)
+    st.image("logo.png.jpeg", width=120)
 
 # ---------------- HEADER ----------------
 st.markdown("""
