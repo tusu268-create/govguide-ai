@@ -167,17 +167,6 @@ if user_input:
             else:
                 st.error("❌ Possible overcharging detected")
 
-        if st.button("🤖 Explain in simple language"):
-            with st.spinner("AI is explaining..."):
-                explanation = get_gemini_response(
-                    f"Explain {user_input} government service in very simple language for a common Indian citizen."
-                )
-            st.markdown("<div class='card'><b>🧠 AI Explanation</b></div>", unsafe_allow_html=True)
-            st.write(explanation)
-
-    else:
-        st.info("Service not found.")
-
 st.markdown("</div>", unsafe_allow_html=True)
 
 # ---------------- FOOTER ----------------
